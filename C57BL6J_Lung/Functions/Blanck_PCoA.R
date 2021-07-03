@@ -23,11 +23,11 @@
 Blanck_PCoA <- function(data){
   
   # Debug
-  rm(list=ls())
-  taxonomy_rank <- "OTU"
-  exp_OTU_Table <- read.csv2(paste("./Rarefied_Dataset/Rare_exp_WithBlanck_",taxonomy_rank,"_Table.csv",
-                                   sep=""), check.names=FALSE)
-  data <-  exp_OTU_Table %>% dplyr::select(-Microbiome)
+  # rm(list=ls())
+  # taxonomy_rank <- "OTU"
+  # exp_OTU_Table <- read.csv2(paste("./Rarefied_Dataset/Rare_exp_WithBlanck_",taxonomy_rank,"_Table.csv",
+  #                                  sep=""), check.names=FALSE)
+  # data <-  exp_OTU_Table %>% dplyr::select(-Microbiome)
   
   
   
