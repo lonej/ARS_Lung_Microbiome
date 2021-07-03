@@ -91,6 +91,28 @@ Clean_N_Rarefied(min_reads, rare_curve)
 
 
 
+# ##################################################
+# PCoA for Blank
+# ##################################################
+
+# Preparation
+rm(list=ls())
+source("./Functions/Blanck_PCoA.R")
+set.seed(4242)
+
+# Parameters
+taxonomy_rank <- "OTU"
+
+# Load Dataset
+exp_OTU_Table <- read.csv2(paste("./Rarefied_Dataset/Rare_exp_WithBlanck_",taxonomy_rank,"_Table.csv",
+                                 sep=""), check.names=FALSE)
+data <-  exp_OTU_Table %>% dplyr::select(-Microbiome)
+
+# PCoA Blank
+Blanck_PCoA(data)
+
+
+
 
 
 # ##################################################
