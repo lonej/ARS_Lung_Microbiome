@@ -1,4 +1,4 @@
-# ARS_Lung_Microbiome
+# MA-ARS and Lung microbiome
 
 
 ***Code for 16S RNAseq***
