@@ -26,7 +26,9 @@ Here are the code for :
 ## Replication of the results
 
 Each directory contains a Rstudio project. <br />
-You can download them and run (mindlessly) the main Script. <br />
+You can download all the Rstudio project. <br />
+Create a Dataset directory and add Data inside (OTU Table, Taxonomy, and Metadata) <br />
+Run (mindlessly) the main Script. <br />
 You should be able to replicate the paper's results <br />
 
 <br />
