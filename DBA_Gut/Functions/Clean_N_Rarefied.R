@@ -126,6 +126,12 @@ Clean_N_Rarefied = function(min_reads, rare_curve){
   write.csv2(Root, "./Checkpoints_Cleaning/Root.csv")
   write.csv2(Chloro, "./Checkpoints_Cleaning/Chloroplast.csv")
 
+  # Save filtered Data
+  OTU_Table_colSums <- OTU_Table %>% colSums() %>% as.data.frame()
+  colnames(OTU_Table_colSums) <- "Root_Chloro_Filtered"
+  OTU_Table_colSums %>% min() %>% print()
+  OTU_Table_colSums %>% max() %>% print()
+  write.csv2(OTU_Table_colSums, "./Checkpoints_Cleaning/Root_Chloro_Filtered.csv")
   
 
   
