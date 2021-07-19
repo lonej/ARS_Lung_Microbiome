@@ -28,7 +28,7 @@ Blanck_PCoA <- function(data){
   # exp_OTU_Table <- read.csv2(paste("./Rarefied_Dataset/Rare_exp_WithBlanck_",taxonomy_rank,"_Table.csv",
   #                                  sep=""), check.names=FALSE)
   # data <-  exp_OTU_Table %>% dplyr::select(-Microbiome)
-  
+
   
   
   # Remove outlier cages
@@ -67,7 +67,7 @@ Blanck_PCoA <- function(data){
   Groups <- data %>% dplyr::select(parasite_strain) %>% dplyr::pull() %>% as.factor()
   Groups <- factor(Groups, levels = c("NI", "ANKA", "K173", "B6_Blanck"))
   group_colors <- c("black", "snow3", "firebrick1", "blue")
-  dot_shape <- c(22, 15, 15, 15)
+  dot_shape <- c(21, 19, 19, 19)
   
   
   plot1 <- ggplot(data = vect, aes(x = PCoA1, y = PCoA2, group=Groups)) +
@@ -93,6 +93,9 @@ Blanck_PCoA <- function(data){
   
   ggsave(paste("./Checkpoints_Sentinels_and_Blanck/C57BL6J_Blanck_PCoA.png", sep=""),
          width = 10, height = 6, plot = plot1)
+  ggsave(paste("./Checkpoints_Sentinels_and_Blanck/C57BL6J_Blanck_PCoA.svg", sep=""),
+         width = 10, height = 6, plot = plot1)
+  
   
   return(plot1)
 }
