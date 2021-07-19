@@ -126,8 +126,12 @@ Clean_N_Rarefied = function(min_reads, rare_curve){
   write.csv2(Root, "./Checkpoints_Cleaning/Root_removal.csv")
   write.csv2(Chloro, "./Checkpoints_Cleaning/Chloroplast_removal.csv")
 
-  
-
+  # Save filtered Data
+  OTU_Table_colSums <- OTU_Table %>% colSums() %>% as.data.frame()
+  colnames(OTU_Table_colSums) <- "Root_Chloro_Filtered"
+  OTU_Table_colSums %>% min() %>% print()
+  OTU_Table_colSums %>% max() %>% print()
+  write.csv2(OTU_Table_colSums, "./Checkpoints_Cleaning/Root_Chloro_Filtered.csv")
   
   
   # --------------------------------------------------
@@ -147,6 +151,12 @@ Clean_N_Rarefied = function(min_reads, rare_curve){
   curveRare <- quickRareCurve(OTU_Table, step = 20, 
                          sample = min(rowSums(OTU_Table)), 
                          col = "blue", cex = 0.6, label = FALSE)
+  dev.off()
+  svg("./Checkpoints_Cleaning/Rarefaction_curve.svg", 
+      width=8, height=5)
+  curveRare <- quickRareCurve(OTU_Table, step = 20, 
+                              sample = min(rowSums(OTU_Table)), 
+                              col = "blue", cex = 0.6, label = FALSE)
   dev.off()
   }
   
